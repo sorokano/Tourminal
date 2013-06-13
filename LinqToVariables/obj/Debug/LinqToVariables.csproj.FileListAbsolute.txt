@@ -1,0 +1,6 @@
+J:\Projects\TourminalLatest13.06\LinqToVariables\bin\Debug\LinqToVariables.dll.config
+J:\Projects\TourminalLatest13.06\LinqToVariables\bin\Debug\LinqToVariables.dll
+J:\Projects\TourminalLatest13.06\LinqToVariables\bin\Debug\LinqToVariables.pdb
+J:\Projects\TourminalLatest13.06\LinqToVariables\obj\Debug\ResolveAssemblyReference.cache
+J:\Projects\TourminalLatest13.06\LinqToVariables\obj\Debug\LinqToVariables.dll
+J:\Projects\TourminalLatest13.06\LinqToVariables\obj\Debug\LinqToVariables.pdb

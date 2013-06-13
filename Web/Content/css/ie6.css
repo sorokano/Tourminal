@@ -1,0 +1,101 @@
+.logo {
+	top: -1px;
+	left: 12px;
+}
+.tourminal {
+	height: 60px;
+	background: url('../../Content/Images/design/tourminal_ie6.gif') no-repeat;
+}
+.logo_tip {
+	padding: 0px 40px 0 25px;
+	background: url('../../Content/Images/design/logo_bg_ie6.gif') repeat-y;
+}
+.tip_content {padding: 10px 0 0 0;}
+.show_tip {padding: 5px 0;}
+.fly_up, .fly_down {background: url('../../Content/Images/design/fly_up_ie6.gif') center no-repeat;}
+
+.logo_bottom {
+	height: 13px;
+	background: url('../../Content/Images/design/logo_bottom_ie6.gif') no-repeat;
+}
+
+.h_menu {margin-left: 130px;}
+
+.h_search {margin-right: 0px;}
+.h_search_input {
+	height: 22px;
+	padding: 3px 21px 0 4px;
+}
+.search_ico {right: 7px;}
+
+.sub_active {
+	background: #f2f2f2;
+	border-bottom: 1px solid #e6e6e6;
+}
+.sub_active .h_menu_link, .sub_active .h_menu_link:hover {
+	color: #000;
+}
+
+.main_menu {
+	margin-bottom: 34px;
+}
+.main_menu_list li {
+	width: 245px;
+}
+.main_menu_list li a {
+	height: 69px !important;
+	padding: 10px 0px 0 0px !important;
+}
+.main_menu_list li a:hover {
+	background: url('../../Content/Images/design/main_menu.png') top repeat-x;
+	background-position: 0 -79px;
+}
+.main_menu_list li span {
+	background: url('../../Content/Images/design/main_menu_ico_ie6.gif') left top no-repeat;
+}
+
+.dir_col {
+	float: left;
+	margin-left: 50px;
+	width: 168px;
+}
+
+.travel_notes_h {
+	height: 40px; 
+}
+.travel_notes_h h2 {
+	line-height: 30px;
+}
+
+/*tree columns grid*/
+.navibar {
+	height: 14px; 
+}
+.navibar a, .navibar span {
+	display: inline !important;
+	line-height: 1;
+}
+.navibar_sep {
+	background: url('../../Content/Images/design/navibar_sep.png') center 3px no-repeat;
+}
+
+.country_maininfo h1 img {
+	margin-bottom: 0px;
+}
+
+
+.three_columns_right {
+	width: 220px;
+	float: right;
+	margin: 20px 0 0 15px;
+}
+.weather {
+	height: 50px;
+}
+.right_travel_notes {
+	border: 1px dashed #777777;
+	padding: 5px 0px 13px 0px;
+	width: 220px;
+	margin: 0 0 40px 0;
+}
+/*/tree columns grid*/

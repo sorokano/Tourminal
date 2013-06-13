@@ -1,0 +1,479 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Турминал туроператор в Санкт-Петербурге: индивидуальные туры, отдых на частных виллах, в апартаментах, бунгало, бронирование авиабилетов, авторские маршруты, неизвестные достопримечательности, уникальные пляжи и нетронутая природа">
+    <meta name="keywords" content="Турминал,туроператор,турфирма,Санкт-Петербург, спб туры,бронирование,авибилеты, визы виндию, гоа,авиабилеты в гоа, билеты в гоа,бронь авиабилетов,бронирование билетов,туроператор в спб,визы,индия,венесуэла,туры в венесуэлу,перу,эквадор,страны мира,путешествия,авторские маршруты, неизвестные достопримечательности, уникальные пляжи,нетронутая природа,экотуризм,экскурсии по странам мира,поездки,перелеты,энциклопедия стран,полезные советы,советы путешественникам,заметки путешественника,конструктор туров">
+    <meta name="author" content="Турминал Тревел Компани"">
+    <link rel="shortcut icon" href="../../Content/Images/favicon.ico" type="image/x-icon" /> 
+    <%--<link href="../../Content/css/flags.css" rel="stylesheet" type="text/css" />--%>
+    <link href="../../Content/css/ie6.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/three_columns_grid.css" rel="stylesheet" type="text/css" />
+    <link href="../../Content/css/modules.css" rel="stylesheet" type="text/css" />
+    <!--[if IE 6]>
+		<link rel="stylesheet" type="text/css" href="../../Content/css/ie6.css" />
+		<script type="text/javascript" src="../../Scripts/ie6.js"></script>
+	<![endif]-->
+	<!--[if lt IE 8]>
+		<link rel="stylesheet" type="text/css" href="../../Content/css/lt_ie8.css" />
+	<![endif]-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/popup.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+    <!--Шрифты-->
+	<link href="http://fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+    <script src="../../Scripts/Common.js" type="text/javascript"></script>
+    <script src="../../Scripts/jcarousellite_1.0.1.pack.js" type="text/javascript"></script>
+    <script src="../../Scripts/scripts.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://www.google.ru/jsapi" type="text/javascript"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="../../Scripts/gmap3.js" type="text/javascript"></script>
+    <script src="../../Scripts/ui.datetimepicker.js" type="text/javascript" charset="utf-8"></script>    
+    <script src="../../Scripts/jquery.ui.datepicker-ru.js" type="text/javascript" charset="utf-8"></script> 
+	<script language="Javascript" type="text/javascript">
+        //google.load('search', '1', { language: 'ru', style: google.loader.themes.GREENSKY });
+        $(document).ready(function () {
+			$('.logo_tip').hide();
+			$('.tip_content').hide();
+            $("#txtTourDateFrom").datepicker($.datepicker.regional['ru']);
+            $("#txtTourDateTo").datepicker($.datepicker.regional['ru']);
+
+            $("#btn-findtour").click (function(e) {
+                
+            });
+			
+			$(".bubble").hide();
+
+            <% LinqToElcondor.TblSpecialOffer of = ElcondorBiz.BizSpecialOffer.GetTopSpecialOffer();
+            if (of != null) {%>
+                    $("#cityinfoname").html('<h3><a href="' + '<%= of.LinkUrl%>' + '"><%= of.Title %></a></h3>'); //<p>' + description + '</p>');
+                    $("#cityinfotext").html('<p><%= of.ShortDescription %> от ' + '<a href="<%= of.LinkUrl%>"><%= of.Price %></a> руб</p>');
+            <%} %>
+            setRandomCityInfo(1);//Math.floor(Math.random() * cityDescrs.length));
+            
+//            $(".slider").jCarouselLite({
+//                btnNext: ".special_slider .next",
+//                btnPrev: ".special_slider .prev",
+//                visible: 4
+//            });
+            $("#search").blur(function () {
+                if ($(this).val() == "") {
+                    $(this).val("Поиск...");
+                    $("#resultbox").css("display", "none");
+                }
+            });
+
+            $("#search").focus(function () {
+                if ($(this).val() == "Найти...") {
+                    $(this).val("Найдено: 0 результатов.");
+                }
+            });
+            function processSearch() {
+                $("#main.content").html('<div id="resultbox" style="display:none;"><div class="googleheader"></div><div id="googlesearch"></div></div>');
+                $(".googleheader").html('<img src="../../Content/Images/loading.gif" width="16" height="16" style="margin-right:8px; vertical-align:-15%;" />Загружаем результаты с Google...');
+                $("#resultbox").css("display", "");
+                var customSearchControl = new google.search.CustomSearchControl('006469277264750591702:-4olszh1ihw');
+                customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                var options = new google.search.DrawOptions();
+                options.setSearchFormRoot('search');
+                customSearchControl.draw('googlesearch', options);
+                customSearchControl.execute(document.getElementById("search").value);
+                if ($(this).val() == "") {
+                    $("#resultbox").slideUp(300, function () {
+                    });
+                }
+            }
+            $("#search").keyup(function (event) {
+                if (event.keyCode == '13') {
+                    //processSearch()
+                }
+            });
+            $("#searchicon").click(function () {
+                //processSearch()
+            });
+            $("#btnVk").click(function (e) {
+                document.location = "http://vk.com/club15845521";
+            });
+
+            $("#btnFacebk").click(function (e) {
+                document.location = "http://www.facebook.com";
+            });
+
+            $("#btnTwit").click(function (e) {
+                document.location = "https://twitter.com/#!/ShatavariShata";
+            });
+			$('.logo_tip').show();
+        });
+	</script>
+</head>
+
+<body>    
+    <header class="header">
+		<div class="h_contacts wrapper relover">
+			<div class="h_address">
+				<p>
+					г. Санкт-Петербург, <a href="../../Contacts">Московский проспект, д.111</a>, офис 514.<br />
+					ООО "Турминал Тревел Компани". <!--Номер в реестре туроператоров <b>МТ3 009373</b>-->
+				</p>
+			</div>
+			<div class="h_phone">
+				(812) 242 82 86, (812) 244 26 76
+			</div>
+		</div>
+		<div class="h_nav">
+			<div class="wrapper">
+				<div class="logo">
+					<a href="/" class="tourminal"></a>
+					<div class="logo_tip relover">
+						<div class="tip_content">
+							
+						</div>
+						<a href="" class="show_tip"><span>Полезная информация</span></a>
+					</div>
+					<div class="logo_bottom"></div>
+				</div>
+				<nav class="h_menu">
+					<ul class="h_menu_list">
+                        <li class="h_menu_item" id="Li1"><a href="../../Index" class="h_menu_link">Главная</a></li>
+                        <%--<li class="h_menu_item" id="itm<%= Elcondor.UI.Utilities.Constants.PageIndexId %>"><a href="../../About" class="h_menu_link">О компании</a></li>--%>
+						<li class="h_menu_item with_sub_menu" id="itm<%= Elcondor.UI.Utilities.Constants.PageOffersId %>"><a href="../../Offers" class="h_menu_link">Страны</a>
+							<div class="h_submenu">
+								<!--Блок со странами полностью идентичен тому, что выводится в блоке "Наши направления"-->
+								<div class="dir_cols relover">										
+                                    <%  List<LinqToElcondor.TblCountry> list = ElcondorBiz.BizCountry.GetCountryList();
+                                        StringBuilder sb = new StringBuilder();
+                                        sb.Append("<div class=\"dir_col\">");
+                                        sb.Append("<ul>");
+                                        foreach (LinqToElcondor.TblCountry country in list) {
+                                            sb.Append("<li>");
+                                            sb.Append(string.Format("<a href=\"../../CountryAbout?id={0}\">{1}</a>", country.Id, country.Name));
+                                            sb.Append("</li>");
+                                        }
+                                        sb.Append("</ul>");
+                                        sb.Append("</div>");
+                                        ViewData["CountryList"] = sb.ToString();
+                                    %>
+                                    <%= ViewData["CountryList"] %>
+                                </div>
+                            </div>
+                        </li>
+						<li class="h_menu_item" id="Li1"><a href="../../HotTours#tourTab=MenuReadyTours" class="h_menu_link">Туры</a></li>
+						<li class="h_menu_item" id="Li1"><a href="../../FlightTickets" class="h_menu_link">Авиабилеты</a></li>
+						<li class="h_menu_item" id="Li1"><a href="../../RentList" class="h_menu_link">Отели</a></li>
+                        <li class="h_menu_item with_sub_menu" id="itm<%= Elcondor.UI.Utilities.Constants.PageIndexId %>"><a href="../../Home/About" class="h_menu_link">О компании</a>
+                            <div class="h_submenu">
+                                <div class="dir_cols relover">					
+                                    <div class="dir_col">
+                                        <ul>
+                                            <li><a href="../../About">О фирме</a></li>
+                                            <li><a href="../../Home/News">Новости</a></li>
+                                            <li><a href="../../">Документы</a></li>
+                                            <li><a href="../../">Партнеры</a></li>
+                                            <li><a href="../../Contacts">Контакты</a></li>
+                                        </ul>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!--<form class="h_search relover" action="#">
+					<input type="text" class="h_search_input" id="search" value="" />
+					<input type="submit" class="search_ico" id="searchicon" value="" />
+				</form>-->
+				<div class="h_search-1 relover">
+					<script>
+					  (function() {
+						var cx = '006469277264750591702:puu4seoigys';
+						var gcse = document.createElement('script');
+						gcse.type = 'text/javascript';
+						gcse.async = true;
+						gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+							'//www.google.com/cse/cse.js?cx=' + cx;
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(gcse, s);
+					  })();
+					</script>
+					<gcse:search></gcse:search>
+				</div>
+            </div>
+		</div>
+	</header>
+    <div class="top_banner wrapper relover">
+		<img alt="" width="990" height="267" id="headerimg"/>
+		<div class="bubble">
+			<div class="bubble_deg relover"><span>&deg;</span></div>
+			<div class="bubble_content">
+				<div class="city_name"></div>
+				<div class="bubble_time"></div>
+			</div>
+		</div>
+		<%--<div id="cityinfobg"></div>--%>
+        <div id="cityinfo">
+            <h2><a id="cityinfoname"></a></h2>
+            <p id="cityinfotext">
+            </p>                
+        </div>
+	</div>
+	<br>
+    <div class="three_columns_grid">
+		<section class="three_columns_mid">
+            <div class="three_columns_content_mid">
+                <section class="country_maininfo">
+                    <div id="resultbox" style="display:none;">
+					        <div class="googleheader"></div>
+					        <div id="googlesearch"></div>
+			        </div>
+                    <div class="travel_notes relover">
+                        <%= BizUpgrade.BizVariables.GetVariableById(BizUpgrade.BizConstants.VariablesMainpageTextId)%>
+                    </div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    
+                </section>
+            </div>
+        </section>
+        <aside class="three_columns_right">
+            <div class="main-right-menu-item">
+                    <%  list = ElcondorBiz.BizCountry.GetCountryList();
+                        sb = new StringBuilder();
+                    //sb.Append("<div class=\"dir_col\">");
+                        sb.Append(string.Format("<div style=\"min-width:120px;margin-bottom:10px;margin-top:10px;text-align:center;\"><b>КАТАЛОГ СТРАН</b></div>"));
+                    sb.Append("<ul style=\"line-height:1.7em;\">");
+                    foreach (LinqToElcondor.TblCountry country in list) {
+                        sb.Append("<li>");
+                        sb.Append(string.Format("<i class=\"flag-top\" style=\"\"><img src=\"../../Content/UserImages/flag_{0}.jpg\" width=\"16px\" height=\"9px\" alt=\"\"/></i>  <a style=\"font-size:13px;\" href=\"../../CountryAbout?id={0}\">{1}</a>", country.Id, country.Name));
+                        sb.Append("</li>");
+                    }
+                    sb.Append("</ul>");
+                    //sb.Append("</div>");
+                    ViewData["CountryList"] = sb.ToString();
+                %>
+                <%= ViewData["CountryList"] %>
+            </div>
+            <div class="main-right-menu-separator"></div>
+            <% List<LinqToElcondor.TblFlight> list2 = ElcondorBiz.BizFlight.GetHotFlights();
+               StringBuilder sbHot = new StringBuilder();
+                sbHot.Append("<ul class=\"wide\">");
+                foreach (LinqToElcondor.TblFlight flight in list2.Take(5)) {
+                    LinqToElcondor.TblRoute rt = ElcondorBiz.BizFlight.GetRouteById(flight.RouteId);
+                    bool isTwoWay = flight.FlightOWStatusId == Elcondor.UI.Utilities.Constants.FlightOWStatusBothWays;
+                    string routeNameFull = string.Empty;
+                    string flightDatesFull = string.Empty;
+                    switch (flight.FlightOWStatusId) {
+                        case Elcondor.UI.Utilities.Constants.FlightOWStatusBothWays:
+                            routeNameFull = rt.Name + "(<img src=\"../../Content/Images/arrowround.png\" alt=\"Направление туда-обратно\" style=\"height:10px\" />)";//"Cанкт-Петербург - " + rt.Name + " - Санкт-Петербург";
+                            flightDatesFull = string.Empty;//flight.FlightDateThere.Value.ToString("dd.MM.yyyy") + " - " + flight.FlightDateBack.Value.ToString("dd.MM.yyyy");
+                            break;
+                        case Elcondor.UI.Utilities.Constants.FlightOWStatusThere:
+                            routeNameFull = rt.Name + "(<img src=\"../../Content/Images/arrowright.png\" alt=\"Направление туда\" style=\"height:10px\" />)";//"Cанкт-Петербург - " + rt.Name;
+                            flightDatesFull = string.Empty;//flight.FlightDateThere.Value.ToString("dd.MM.yyyy");
+                            break;
+                        case Elcondor.UI.Utilities.Constants.FlightOWStatusBack:
+                            routeNameFull = rt.Name + "(<img src=\"../../Content/Images/arrowleft.png\" alt=\"Направление обратно\" style=\"height:10px\" />)";//rt.Name + " - Санкт-Петербург";
+                            flightDatesFull = string.Empty;//flight.FlightDateBack.Value.ToString("dd.MM.yyyy");
+                            break;
+                    }
+                    
+                    sbHot.Append(string.Format("<li><a style=\"color:#000 !important;\" href=\"../../FlightTickets?routeId={0}\">{1}{2} <b>{3}</b></a></li>"
+                                , flight.RouteId, routeNameFull 
+                                , flightDatesFull , flight.Price));
+                }
+                
+                sbHot.Append("</ul>");
+                string hotDeals = sbHot.ToString();
+            %>
+            <div class="main-right-menu-item">
+                    <%  list = ElcondorBiz.BizCountry.GetCountryList();
+                        sb = new StringBuilder();
+                    //sb.Append("<div class=\"dir_col\">");
+                        sb.Append(string.Format("<div style=\"min-width:120px;margin-bottom:10px;margin-top:10px;text-align:center;\"><b>ЛУЧШИЕ ЦЕНЫ НА ЧАРТЕРЫ</b></div>"));
+                    sb.Append("<ul class=\"wide\">");
+                    //sb.Append("<li>");
+                    //sb.Append(string.Format("<div style=\"min-width:120px;margin-bottom:10px;\"><b>ЛУЧШИЕ ЦЕНЫ НА ЧАРТЕРЫ</b></div>"));
+                    //sb.Append("</li>");
+                    
+                    sb.Append("</ul>");
+                    //sb.Append("</div>");
+                    ViewData["CharterList"] = sb.ToString();
+                %>
+                <%= ViewData["CharterList"]%>
+                <%= sbHot.ToString() %>
+            </div>
+            <div class="main-right-menu-separator"></div>
+            <%--<div class="main-right-menu-item">
+                <div style="min-width:120px;margin-bottom:10px;margin-top:10px;text-align:center;"><b>ПОИСК ТУРОВ</b></div>
+                <div style="margin-left:20px">
+                    <script src="http://ui.sletat.ru/client/linker.js?settings={formViewMode:'block'}&sfx=_QV9QR" type="text/javascript"></script><iframe  id="sm_slySearch_QV9QR" src="http://ui.sletat.ru/SearchForm.html?sfx=_QV9QR&fbg=fffefc&mbg=ffffff&bbg=ffffff&bbd=eeeeee&cbd=abadb3&c1=222222&c2=838383&c3=8f8f8f&c4=dac6a1&style=p.caption%7Bfont-weight%3A%20normal%20!important%3B%7Dp.caption%7Bfont-style%3A%20italic%20!important%3B%7Dbody%20div%23sf%7B-moz-border-radius%3A3px%20!important%3Bborder-radius%3A%203px%20!important%3B%7D&tpl=mini&dptCity=1264&country=40&settings={'plugins':[]}"  style="background:url('http://ui.sletat.ru/gfx/ld3.gif') no-repeat center center;" width="170" height="220" frameborder="0" scrolling="no"></iframe>
+                    <br /><input type="button" value="Найти туры" onclick="sm_sly_kGuGz.go()"/>
+                </div>--%>
+                <%--<table style="width:120px;">
+                    <tr class="odd">
+                        <td>
+                            ОТКУДА
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" style="width: 110px;" id="txtTourFromWhere" />
+                        </td>
+                    </tr>
+                    <tr class="odd">
+                        <td>
+                            КУДА
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" style="width: 110px;" id="txtTourToWhere" />
+                        </td>
+                    </tr>
+                    <tr class="odd">
+                        <td>
+                            ДАТЫ
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            с <input type="text" style="width: 45px;" id="txtTourDateFrom" /> по <input type="text" style="width: 45px;" id="txtTourDateTo" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">
+                            <a class="yellow_button_s"  id="btn-findtour">
+                                <strong>Найти</strong>
+                            </a>
+                        </td>
+                    </tr>
+                </table>--%>
+            <%--</div>--%>
+            <!-- Погода -->
+            <div class="weather">   
+				<div class="relover">
+					<div class="bubble_deg relover"><span>&deg;</span></div>
+					<div class="weather_content">
+						<div class="city_name"></div>
+						<div class="bubble_time"></div>
+					</div>
+				</div>
+			</div>
+            <!-- Случайная заметка: по всем странам -->
+           <fieldset class="right_travel_notes">           
+               <ul class="travel_notes_list">
+                        <%  StringBuilder sb2 = new StringBuilder();
+                            LinqToElcondor.TblSightseeing item1 = ElcondorBiz.BizSightseeing.GetRandomSightseeing();
+                            sb2.Append(string.Format("<li><article class=\"travel_notes_article\">"));
+                            bool hasImage1 = false;try {hasImage1 = item1.ThumbImage.Length > 0;} catch { hasImage1 = false; }
+                            if (hasImage1)
+                                sb2.Append(string.Format("<figure><a href='../../ViewArticle?id=" + item1.Id + "'><img src=\"../../Content/UserImages/sightseeing_th_{0}.jpg\" style=\"width:185px;\" /></a></figure>", item1.Id));
+                            sb2.Append(string.Format("<h3 class=\"note_header\"><a href=\"../../ViewArticle?id={0}\">{1}</a></h3>"
+                                                                                        , item1.Id, item1.Name));
+                            //sb2.Append(string.Format("<div class=\"datestamp\">{0}</div>", item1.DateCreated.Value.ToString("dd.MM.yyyy")));
+                            sb2.Append(string.Format("<div class=\"note_author relover\"><div class=\"note_author_name\">{1}</div><div class=\"note_rating\">{0}</div></div>"
+                                                            , item1.DateCreated.Value.ToString("dd.MM.yyyy"), ElcondorBiz.BizCountry.GetCountryById(item1.CountryId).Name));
+                            sb2.Append(string.Format("<div class=\"note_content\"><p>{0}</p></div>", item1.ShortDescription.Length > 100 ?
+                                            item1.ShortDescription.Substring(0, 100) + "<a href='../../ViewArticle?id=" + item1.Id + "'> Подробнее...</a>"
+                                            : item1.ShortDescription));
+                            sb2.Append("</li>"); %>
+                        <%= sb2.ToString() %>
+                    </ul>
+                    <span class="all_notes_link"><a href="#" onClick="window.location.reload();return false;"><img src="../../Content/Images/btn-change-country.jpg" alt=""/></a></span>
+                </ul>
+            </fieldset>
+            <!-- Облако тэгов-->
+            <%--<div class="right_tags_cloud">
+                <div id="wordcloud"></div>
+            </div>--%>
+        </aside>   
+    </div>
+    
+    <div class="clear"></div>
+    <div class="relover">
+            <div class="travel_notes relover">
+				<div class="wrapper">
+					<div class="travel_notes_h relover">
+						<h2><a href="../../CountryArticles">Заметки путешественников</a></h2>
+						<div class="sort_notes">
+							<%--Сортировать: <span>по популярности</span> <a href="">по стране</a>--%>
+						</div>
+					</div>
+					<ul class="travel_notes_list">
+                            <%  sb2 = new StringBuilder();
+                                foreach (LinqToElcondor.TblSightseeing item in ElcondorBiz.BizSightseeing.GetRandomSightseeingList(4)) {
+                                    sb2.Append(string.Format("<li>"));
+                                    bool hasImage = false;try {hasImage = item.ThumbImage.Length > 0;} catch { hasImage = false; }
+                                    
+                                    sb2.Append("<article class=\"travel_notes_article\">");
+                                    if (hasImage)
+                                        sb2.Append(string.Format("<figure><a href='../../ViewArticle?id=" + item.Id + "'><img src=\"../../Content/UserImages/sightseeing_th_{0}.jpg\" alt=\"\" width=\"215\" height=\"122\" /></a></figure>", item.Id));
+
+                                    sb2.Append(string.Format("<h3 class=\"note_header\"><a href=\"../../ViewArticle?id={0}\">{1}</a></h3>", item.Id, item.Name.Length > 120 ?
+                                                    item.Name.Substring(0, 120) + "<a href='../../ViewArticle?id=" + item.Id + "'>... Подробнее...</a>"
+                                                    : item.Name));
+                                    sb2.Append(string.Format("<div class=\"note_author relover\"><div class=\"note_author_name\">{0}</div><div class=\"note_rating\">{1}</div></div>", string.Empty, string.Empty));
+                                    sb2.Append("<div class=\"note_content\"><p>");
+                                    sb2.Append(string.Format("{0}", string.IsNullOrEmpty(item.ShortDescription) ? string.Empty : item.ShortDescription.Length > 220 ?
+                                                    item.ShortDescription.Substring(0, 220) + "<a href='../../ViewArticle?id=" + item.Id + "'>... Подробнее...</a>"
+                                                    : item.ShortDescription));
+                                    sb2.Append("</p></div>");
+
+                                    sb2.Append(string.Format(
+                                        "<div class=\"note_info relover\"><div class=\"note_country\">{0}</div><div class=\"note_date\">{1}</div></div>"
+                                        , ElcondorBiz.BizCountry.GetCountryById(item.CountryId).Name, item.DateCreated.Value.ToString("dd.MM.yyyy")));
+
+                                    sb2.Append("</article></li>");
+                               } %>
+                               <%= sb2.ToString() %>
+                        </ul>
+                    </div>
+			    </div>
+		    </div>
+	<!-- Main End --> 
+        <nav class="b_menu wrapper relover">
+			<ul>
+				<li><a href="../../About">О компании</a></li>
+                <li class="active"><a href="../../Offers">Страны</a></li>
+				<li><a href="../../News">Новости</a></li>
+				<li><a href="../../Contacts">Контакты</a></li>
+				<li><a href="../../UserHome">Личный кабинет</a></li>
+			</ul>
+		</nav>  
+    <footer class="footer">
+		<div class="wrapper relover">
+			<div class="copyright">
+				<p>ООО "Турминал тревел компани".</p>
+				<a href="mailto:info@tourminal.ru">info@tourminal.ru</a>
+			</div>
+			<div class="socials relover">
+				<div class="socials_info">Рассказать друзьям</div>
+				<div class="socials_tw relover"><img src="../../Content/Images/socials_ex_tw.png" alt=""  id="Img1"/></div>
+				<div class="socials_gp relover"><img src="../../Content/Images/socials_ex_gp.png" alt="" /></div>
+				<div class="socials_vk relover"><img src="../../Content/Images/socials_ex_vk.png" alt=""  id="Img2"/></div>
+			</div>
+			<div class="f_contacts">
+				<div class="f_phone">
+					<a href="../../Contacts" id="A2" class="f_address">
+						+7 812 244 26 76
+					</a>
+				</div>
+                <div class="f_phone">
+                    <a href="../../Contacts" id="A3" class="f_address">
+						+7 812 923 25 32
+                    </a>
+				</div>					
+			</div>
+		</div>
+	</footer>
+    <div class="airplane"></div>
+</body>
+</html>
+
+
+

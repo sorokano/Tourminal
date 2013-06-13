@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TourminalDB">
+  <DataContextMoniker Name="/TourminalDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ad31f56a-e2f5-4907-b779-b795edc3b390" absoluteBounds="5.375, 3.75, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TourminalDBDataContext/TblVariables" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d7f2249-e410-4341-9b3d-8605f7e65371" absoluteBounds="5.39, 4.21, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

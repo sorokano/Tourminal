@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DEAF16E-FD5D-4F36-9DB9-D150F7EA18B7}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Elcondor</RootNamespace>
+    <AssemblyName>Elcondor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FredCK.FCKeditorV2, Version=2.6.3.25168, Culture=neutral, PublicKeyToken=4f86767c9b519a06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\FredCK.FCKeditorV2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminHelpers\CityImageHelper.cs" />
+    <Compile Include="AdminHelpers\GridBasicListHelper.cs" />
+    <Compile Include="AdminHelpers\GridCityListHelper.cs" />
+    <Compile Include="AdminHelpers\GridCountryInfoList.cs" />
+    <Compile Include="AdminHelpers\GridCountryListHelper.cs" />
+    <Compile Include="AdminHelpers\GridCruiseListHelper.cs" />
+    <Compile Include="AdminHelpers\GridCurrencyList.cs" />
+    <Compile Include="AdminHelpers\GridExcursListHelper.cs" />
+    <Compile Include="AdminHelpers\GridGoodForList.cs" />
+    <Compile Include="AdminHelpers\GridHotelAmenitiesList.cs" />
+    <Compile Include="AdminHelpers\GridHotelList.cs" />
+    <Compile Include="AdminHelpers\GridHotelRoomList.cs" />
+    <Compile Include="AdminHelpers\GridHotelServiceList.cs" />
+    <Compile Include="AdminHelpers\GridHotelTypeList.cs" />
+    <Compile Include="AdminHelpers\GridRegionListHelper.cs" />
+    <Compile Include="AdminHelpers\GridRegionRecreationListHelper.cs" />
+    <Compile Include="AdminHelpers\GridRoomTypeList.cs" />
+    <Compile Include="AdminHelpers\GridSightseeingListHelper.cs" />
+    <Compile Include="AdminHelpers\GridSightseeingTypeList.cs" />
+    <Compile Include="AdminHelpers\GridTagListHelper.cs" />
+    <Compile Include="AdminHelpers\GridTourListHelper.cs" />
+    <Compile Include="AdminHelpers\PageListHelper.cs" />
+    <Compile Include="AdminHelpers\SubmenuCountryHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ArendaAdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ElcondorWCF.svc.cs">
+      <DependentUpon>ElcondorWCF.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ElcondorWS.asmx.cs">
+      <DependentUpon>ElcondorWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IElcondorWCF.cs" />
+    <Compile Include="ITaratripWCF.cs" />
+    <Compile Include="JSONPBehavior.cs" />
+    <Compile Include="JSONPBindingElement.cs" />
+    <Compile Include="JSONPBindingExtension.cs" />
+    <Compile Include="JSONPEncoderFactory.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\TblHotelView.designer.cs" />
+    <Compile Include="Models\TourView.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TourView.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DictService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebserviceXCountry\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebserviceX\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TaratripWCF.svc.cs">
+      <DependentUpon>TaratripWCF.svc</DependentUpon>
+    </Compile>
+    <Compile Include="TaratripWS.asmx.cs">
+      <DependentUpon>TaratripWS.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI.Utilities\Common.cs" />
+    <Compile Include="UI.Utilities\Constants.cs" />
+    <Compile Include="UI.Utilities\DictionaryHelper.cs" />
+    <Compile Include="UI.Utilities\GridArticleList.cs" />
+    <Compile Include="UI.Utilities\GridCountryInfoList.cs" />
+    <Compile Include="UI.Utilities\GridTourListHelper.cs" />
+    <Compile Include="UI.Utilities\HotelImageHelper.cs" />
+    <Compile Include="UI.Utilities\HotelRoomListHelper.cs" />
+    <Compile Include="UI.Utilities\HotelSearchResultHelper.cs" />
+    <Compile Include="UI.Utilities\HotelViewPopupHelper.cs" />
+    <Compile Include="UI.Utilities\NameValue.cs" />
+    <Compile Include="UI.Utilities\Pagination.cs" />
+    <Compile Include="UI.Utilities\RandomImageListHelper.cs" />
+    <Compile Include="UI.Utilities\SightseeingImageHelper.cs" />
+    <Compile Include="UI.Utilities\SubmenuRegionDetailHelper.cs" />
+    <Compile Include="UI.Utilities\TagCloudGenerator.cs" />
+    <Compile Include="UI.Utilities\UI.Utilities.cs" />
+    <Compile Include="Views\Shared\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Country.Master.cs">
+      <DependentUpon>Country.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Country.Master.designer.cs">
+      <DependentUpon>Country.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\Admin.css" />
+    <Content Include="Content\css\menu.css" />
+    <Content Include="Content\css\menuAdmin.css" />
+    <Content Include="Content\Images\logo1.jpg" />
+    <Content Include="ElcondorWCF.svc" />
+    <Content Include="ElcondorWS.asmx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\cssverticalmenu.js" />
+    <Content Include="Scripts\gmap3.js" />
+    <Content Include="Scripts\initcontrol.js" />
+    <Content Include="Scripts\jqcloud-1.0.0.min.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.7.2.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.7.3.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.14.custom.min.js" />
+    <Content Include="Scripts\jquery.carousel.min.js" />
+    <Content Include="Scripts\jquery.gallery.0.3.min.js" />
+    <Content Include="Scripts\jquery.json-2.2.min.js" />
+    <Content Include="Scripts\jquery.jsonp-2.1.4.js" />
+    <Content Include="Scripts\jquery.multiselect.min.js" />
+    <Content Include="Scripts\jquery.pop.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.query-2.1.7.js" />
+    <Content Include="Scripts\jquery.rating.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.button.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-ru.js" />
+    <Content Include="Scripts\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Scripts\jquery.ui.draggable.js" />
+    <Content Include="Scripts\jquery.ui.position.js" />
+    <Content Include="Scripts\jquery.ui.resizable.js" />
+    <Content Include="Scripts\jquery.ui.tabs.min.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.use.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\popup.js" />
+    <Content Include="Scripts\smoothmenu.js" />
+    <Content Include="Scripts\ui.datetimepicker.js" />
+    <Content Include="Scripts\uploadify\cancel.png" />
+    <Content Include="Scripts\uploadify\expressInstall.swf" />
+    <Content Include="Scripts\uploadify\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.v2.1.4.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify.v2.1.4.min.js" />
+    <Content Include="Scripts\uploadify\swfobject.js" />
+    <Content Include="Scripts\uploadify\uploadify.allglyphs.swf" />
+    <Content Include="Scripts\uploadify\uploadify.css" />
+    <Content Include="Scripts\uploadify\uploadify.swf" />
+    <None Include="Service References\DictService\DictService.wsdl" />
+    <None Include="Service References\DictService\Elcondor.DictService.Dictionary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DictService\Elcondor.DictService.DictionaryWord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DictService\Elcondor.DictService.Strategy.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DictService\Elcondor.DictService.WordDefinition.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WebserviceXCountry\country.wsdl" />
+    <None Include="Service References\WebserviceX\configuration91.svcinfo" />
+    <None Include="Service References\WebserviceX\configuration.svcinfo" />
+    <None Include="Service References\WebserviceX\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WebserviceXCountry\country.disco" />
+    <None Include="Service References\WebserviceXCountry\configuration91.svcinfo" />
+    <None Include="Service References\WebserviceXCountry\configuration.svcinfo" />
+    <None Include="Service References\WebserviceXCountry\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DictService\configuration91.svcinfo" />
+    <None Include="Service References\DictService\configuration.svcinfo" />
+    <None Include="Service References\DictService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="TaratripWCF.svc" />
+    <Content Include="TaratripWS.asmx" />
+    <Content Include="Views\Admin\AddCruise.aspx" />
+    <Content Include="Views\Admin\AddExcurs.aspx" />
+    <Content Include="Views\Admin\AddSightseeing.aspx" />
+    <Content Include="Views\Admin\CityEdit.aspx" />
+    <Content Include="Views\Admin\CityListEdit.aspx" />
+    <Content Include="Views\Admin\CountryInfoEdit.aspx" />
+    <Content Include="Views\Admin\CountryListEdit.aspx" />
+    <Content Include="Views\Admin\CruiseEdit.aspx" />
+    <Content Include="Views\Admin\EditCityPhoto.aspx" />
+    <Content Include="Views\Admin\EditCruisePhoto.aspx" />
+    <Content Include="Views\Admin\EditExcursPhoto.aspx" />
+    <Content Include="Views\Admin\EditRecreationPhoto.aspx" />
+    <Content Include="Views\Admin\EditSightseeingPhoto.aspx" />
+    <Content Include="Views\Admin\EditTourPhoto.aspx" />
+    <Content Include="Views\Admin\ExcursEdit.aspx" />
+    <Content Include="Views\Admin\Login.aspx" />
+    <Content Include="Views\Admin\TechPage.aspx" />
+    <Content Include="Views\Admin\TourEdit.aspx" />
+    <Content Include="Views\Admin\RegionListEdit.aspx" />
+    <Content Include="Views\Admin\SightseeingList.aspx" />
+    <Content Include="Views\Admin\AddTour.aspx" />
+    <Content Include="Views\Admin\CountryEdit.aspx" />
+    <Content Include="Views\Admin\CountryList.aspx" />
+    <Content Include="Views\Admin\CruiseList.aspx" />
+    <Content Include="Views\Admin\DictionaryList.aspx" />
+    <Content Include="Views\Admin\ExcursList.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Admin\PageList.aspx" />
+    <Content Include="Views\Admin\RegionEdit.aspx" />
+    <Content Include="Views\Admin\SightseeingTypeList.aspx" />
+    <Content Include="Views\Admin\TourList.aspx" />
+    <Content Include="Views\ArendaAdmin\AddHotel.aspx" />
+    <Content Include="Views\ArendaAdmin\AddHotelRoom.aspx" />
+    <Content Include="Views\ArendaAdmin\CountryList.aspx" />
+    <Content Include="Views\ArendaAdmin\CurrencyList.aspx" />
+    <Content Include="Views\ArendaAdmin\DictionaryList.aspx" />
+    <Content Include="Views\ArendaAdmin\EditHotel.aspx" />
+    <Content Include="Views\ArendaAdmin\EditHotelDetails.aspx" />
+    <Content Include="Views\ArendaAdmin\EditHotelPhoto.aspx" />
+    <Content Include="Views\ArendaAdmin\EditHotelRoom.aspx" />
+    <Content Include="Views\ArendaAdmin\GoodForList.aspx" />
+    <Content Include="Views\ArendaAdmin\HotelAmenitiesList.aspx" />
+    <Content Include="Views\ArendaAdmin\HotelList.aspx" />
+    <Content Include="Views\ArendaAdmin\HotelServicesList.aspx" />
+    <Content Include="Views\ArendaAdmin\HotelTypeList.aspx" />
+    <Content Include="Views\ArendaAdmin\Index.aspx" />
+    <Content Include="Views\ArendaAdmin\RoomTypeList.aspx" />
+    <Content Include="Views\ArendaAdmin\TicketManagement.aspx" />
+    <Content Include="Views\ArendaAdmin\UserList.aspx" />
+    <Content Include="Views\Home\Avia.aspx" />
+    <Content Include="Views\Home\Articles.aspx" />
+    <Content Include="Views\Home\BankAccount.aspx" />
+    <Content Include="Views\Home\CityAbout.aspx" />
+    <Content Include="Views\Home\Contacts.aspx" />
+    <Content Include="Views\Home\CountryAbout.aspx" />
+    <Content Include="Views\Home\CountryAdditional.aspx" />
+    <Content Include="Views\Home\CountryArticles.aspx" />
+    <Content Include="Views\Home\CountryCruises.aspx" />
+    <Content Include="Views\Home\CountryExcurs.aspx" />
+    <Content Include="Views\Home\CountryHotels.aspx" />
+    <Content Include="Views\Home\CountryTours.aspx" />
+    <Content Include="Views\Home\Faq.aspx" />
+    <Content Include="Views\Home\IndividualTours.aspx" />
+    <Content Include="Views\Home\Offers.aspx" />
+    <Content Include="Views\Home\PaymentMethod.aspx" />
+    <Content Include="Views\Home\RegionAbout.aspx" />
+    <Content Include="Views\Home\RegionRecreationAbout.aspx" />
+    <Content Include="Views\Home\Rent.aspx" />
+    <Content Include="Views\Home\ViewArticle.aspx" />
+    <Content Include="Views\Home\ViewByTag.aspx" />
+    <Content Include="Views\Home\ViewTour.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\css\style.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\ArticleView.Master" />
+    <Content Include="Views\Shared\Tour.Master" />
+    <Content Include="Views\Shared\Rent.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Country.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ElcondorBiz\ElcondorBiz.csproj">
+      <Project>{950DE0AA-1328-4735-872E-2C824AD5BF91}</Project>
+      <Name>ElcondorBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LinqToElcondor\LinqToElcondor.csproj">
+      <Project>{83869B4F-0F0A-4D82-BCF2-0C0837495190}</Project>
+      <Name>LinqToElcondor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaratripBiz\TaratripBiz.csproj">
+      <Project>{8B906E50-4F2C-43DF-B10F-5698830192B6}</Project>
+      <Name>TaratripBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaratripLinq\TaratripLinq.csproj">
+      <Project>{78E3288C-F63E-45CF-BB12-F74637A2731E}</Project>
+      <Name>TaratripLinq</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\TourView.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TourView.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\uploadify\check.php" />
+    <None Include="Scripts\uploadify\com\adobe\air\logging\FileTarget.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\HMAC.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\MD5.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\MD5Stream.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\SHA1.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\SHA224.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\SHA256.as" />
+    <None Include="Scripts\uploadify\com\adobe\crypto\WSSEUsernameToken.as" />
+    <None Include="Scripts\uploadify\com\adobe\errors\IllegalStateError.as" />
+    <None Include="Scripts\uploadify\com\adobe\fileformats\vcard\Address.as" />
+    <None Include="Scripts\uploadify\com\adobe\fileformats\vcard\Email.as" />
+    <None Include="Scripts\uploadify\com\adobe\fileformats\vcard\Phone.as" />
+    <None Include="Scripts\uploadify\com\adobe\fileformats\vcard\VCard.as" />
+    <None Include="Scripts\uploadify\com\adobe\fileformats\vcard\VCardParser.as" />
+    <None Include="Scripts\uploadify\com\adobe\images\BitString.as" />
+    <None Include="Scripts\uploadify\com\adobe\images\JPGEncoder.as" />
+    <None Include="Scripts\uploadify\com\adobe\images\PNGEncoder.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\DynamicURLLoader.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\IURIResolver.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\MimeTypeMap.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\proxies\RFC2817Socket.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\URI.as" />
+    <None Include="Scripts\uploadify\com\adobe\net\URIEncodingBitmap.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\Database.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\Definition.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\Dict.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\DictionaryServer.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\ConnectedEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\DatabaseEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\DefinitionEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\DefinitionHeaderEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\DictionaryServerEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\DisconnectedEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\ErrorEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\MatchEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\MatchStrategiesEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\events\NoMatchEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\MatchStrategy.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\Response.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\util\CompleteResponseEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\protocols\dict\util\SocketHelper.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSON.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONDecoder.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONEncoder.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONParseError.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONToken.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONTokenizer.as" />
+    <None Include="Scripts\uploadify\com\adobe\serialization\json\JSONTokenType.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\ArrayUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\DateUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\DictionaryUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\IntUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\NumberFormatter.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\StringUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\utils\XMLUtil.as" />
+    <None Include="Scripts\uploadify\com\adobe\webapis\events\ServiceEvent.as" />
+    <None Include="Scripts\uploadify\com\adobe\webapis\ServiceBase.as" />
+    <None Include="Scripts\uploadify\com\adobe\webapis\URLLoaderBase.as" />
+    <None Include="Scripts\uploadify\uploadify.fla" />
+    <None Include="Scripts\uploadify\uploadify.php" />
+    <Content Include="Views\Shared\Article.Master" />
+    <None Include="Service References\WebserviceX\globalweather.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\TourView.dbml.layout">
+      <DependentUpon>TourView.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DictService\" />
+    <WCFMetadataStorage Include="Service References\WebserviceXCountry\" />
+    <WCFMetadataStorage Include="Service References\WebserviceX\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>37887</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TourView">
+  <DataContextMoniker Name="/TourViewDataContext" />
+  <nestedChildShapes>
+    <classShape Id="67175121-0a47-426c-9573-67169040412d" absoluteBounds="3.625, 1.375, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/TourViewDataContext/TblTourView" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a63669f2-fb2c-4208-9c5a-c4db2d2949cb" absoluteBounds="3.64, 1.835, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

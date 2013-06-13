@@ -1,0 +1,9 @@
+J:\Projects\TourminalLatest13.06\TourminalWebservice\obj\Debug\ResolveAssemblyReference.cache
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\TourminalWebservice.dll
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\TourminalWebservice.pdb
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\BizUpgrade.dll
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\LinqToVariables.dll
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\BizUpgrade.pdb
+J:\Projects\TourminalLatest13.06\TourminalWebservice\bin\LinqToVariables.pdb
+J:\Projects\TourminalLatest13.06\TourminalWebservice\obj\Debug\TourminalWebservice.dll
+J:\Projects\TourminalLatest13.06\TourminalWebservice\obj\Debug\TourminalWebservice.pdb

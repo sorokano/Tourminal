@@ -1,0 +1,7 @@
+J:\Projects\TourminalLatest13.06\BizUpgrade\bin\Debug\BizUpgrade.dll
+J:\Projects\TourminalLatest13.06\BizUpgrade\bin\Debug\BizUpgrade.pdb
+J:\Projects\TourminalLatest13.06\BizUpgrade\bin\Debug\LinqToVariables.dll
+J:\Projects\TourminalLatest13.06\BizUpgrade\bin\Debug\LinqToVariables.pdb
+J:\Projects\TourminalLatest13.06\BizUpgrade\obj\Debug\ResolveAssemblyReference.cache
+J:\Projects\TourminalLatest13.06\BizUpgrade\obj\Debug\BizUpgrade.dll
+J:\Projects\TourminalLatest13.06\BizUpgrade\obj\Debug\BizUpgrade.pdb

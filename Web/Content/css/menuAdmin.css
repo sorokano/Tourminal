@@ -1,0 +1,425 @@
+﻿#menucountry{
+    min-width: 800px;
+    margin: -3px 0 0 0px;
+}
+
+#menutour {
+    min-width: 700px;
+    margin: -5px 0 20px 20px;
+    height: 48px;
+    background: transparent;
+    display: block;
+}
+
+#menutour ul li a {
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+#menutour ul li a:hover {
+    background-color: black;
+    color: #fff;
+}
+
+#menutour ul {
+    z-index:100;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#tourprice {
+    z-index:100;
+    margin: 0 25px 0 0;
+    padding: 0 65px !important;
+    list-style-type: none;
+    float: right;
+}
+
+#tourprice li a {
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+.ddsmoothmenu-v ul{
+margin: 0;
+padding: 0;
+width: 199px; /* Main Menu Item widths */
+list-style-type: none;
+font: 14px Century Gothic, Futura;
+z-index: 1000;
+}
+ 
+.ddsmoothmenu-v ul li{
+position: relative;
+margin: 2px 0;
+line-height: 1.1em;
+}
+
+.ddsmoothmenu-v ul li .double-line{
+line-height: 1.1em;
+}
+
+/* Top level menu links style */
+.ddsmoothmenu-v ul li a {
+border: 1px solid #2f3a44;
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+min-height: 20px;
+padding: 10px 6px;
+/*border-bottom: 1px solid #778;
+border-right: 1px solid #778;*/
+border: 1px solid #fff;
+-webkit-border-radius:6px 6px 8px 6px;-moz-border-radius:6px 6px 8px;border-radius:6px 6px 8px 6px;
+}
+
+.ddsmoothmenu-v ul li span{
+display: block;
+overflow: auto; /*force hasLayout in IE7 */
+color: white;
+text-decoration: none;
+padding: 6px 6px 6px 2px;
+/*border-bottom: 1px solid #778;
+border-right: 1px solid #778;*/
+border: 2px solid #2f3a44;
+}
+
+.ddsmoothmenu-v ul li a:link, .ddsmoothmenu-v ul li a:visited, .ddsmoothmenu-v ul li a:active{
+background: #7a8899; /*background of menu items (default state)*/
+color: white;
+}
+
+.ddsmoothmenu-v ul li span{
+background: #7a8899; /*background of menu items (default state)*/
+color: white;
+}
+
+.ddsmoothmenu-v ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background: black; 
+color: white;
+}
+
+.ddsmoothmenu-v ul li a:hover{
+background: black; /*background of menu items during onmouseover (hover state)*/
+color: white;
+}
+
+/*Sub level menu items */
+.ddsmoothmenu-v ul li ul{
+position: absolute;
+width: 175px; /*Sub Menu Items width */
+top: 0;
+z-index: 1000;
+font-weight: normal;
+visibility: hidden;
+margin-left: 5px;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90); /* IE 5.5+*/
+-moz-opacity: 0.9; /* Mozilla 1.6 и ниже */
+-khtml-opacity: 0.9; /* Konqueror 3.1, Safari 1.1 */
+opacity: 0.9; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+}
+
+.ddsmoothmenu-v ul li ul li span, .ddsmoothmenu-v ul li ul li a:link{
+background-color: #5e6977;
+}
+
+.ddsmoothmenu-v ul li ul li a:hover{
+background-color: black !important;
+}
+
+.ddsmoothmenu-v ul li ul li a:link, .ddsmoothmenu-v ul li ul li a:visited, .ddsmoothmenu-v ul li ul li a:active {
+background-color: #5e6977;
+}
+
+ 
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu-v ul li { float: left; height: 1%; }
+* html .ddsmoothmenu-v ul li a { height: 1%; }
+/* End */
+
+/*HORIZ MENU*/
+
+.ddsmoothmenu{
+font: 14px Century Gothic, Futura;
+background: #8a9b9f; /*background of menu bar (default state)*/
+width: 100%;
+}
+
+.ddsmoothmenu ul{
+z-index:100;
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+/*Top level list items*/
+.ddsmoothmenu ul li{
+position: relative;
+display: inline;
+float: left;
+padding-right: 3px;
+min-height: 20px;
+min-width: 100px;
+}
+
+/*Top level menu link items style*/
+.ddsmoothmenu ul li a{
+display: block;
+background: #7a8899; /*background of menu items (default state)*/
+color: white;
+padding: 8px 3px;
+/*border-right: 1px solid #778;*/
+color: #fff;
+text-align: center;
+text-decoration: none;
+/*border: 1px solid #2f3a44;*/
+border: 1px solid #fff;
+-webkit-border-radius:6px 6px 8px 6px;-moz-border-radius:6px 6px 8px;border-radius:6px 6px 8px 6px;
+}
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+display: inline-block;
+}
+
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
+color: white;
+}
+
+.ddsmoothmenu ul li a.selected{ /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+background: #8a9b9f; 
+color: white;
+}
+
+.ddsmoothmenu ul li a:hover, .ddsmoothmenu ul li ul li.itemlvl2 a:hover, .ddsmoothmenu ul li ul li.itemlvl2 ul li a:hover, .ddsmoothmenu ul li ul li a.wide:hover{
+background: black; /*background of menu items during onmouseover (hover state)*/
+color: white;
+}
+	
+/*1st sub level menu*/
+.ddsmoothmenu ul li ul{
+position: absolute;
+left: 0;
+display: none; /*collapse all sub menus to begin with*/
+visibility: hidden;
+background: none;
+}
+
+/*Sub level menu list items (undo style from Top level List Items)*/
+.ddsmoothmenu ul li ul li{
+display: list-item;
+float: none;
+text-align: left;
+min-height: 12px;
+}
+
+.ddsmoothmenu ul li ul li.itemlvl2 a{
+margin-left: 5px !important;
+margin-right: -5px !important;
+background-color: #888888;
+min-width:245px; 
+text-align: left;
+-webkit-border-radius:3px 3px 5px 3px;-moz-border-radius:3px 3px 5px;border-radius:3px 3px 5px 3px;
+filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90); /* IE 5.5+*/
+-moz-opacity: 0.9; /* Mozilla 1.6 и ниже */
+-khtml-opacity: 0.9; /* Konqueror 3.1, Safari 1.1 */
+opacity: 0.9; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
+}
+
+.ddsmoothmenu ul li ul li.itemlvl2 ul li a{
+background-color: #8a9b9f !important;
+margin: 0 !important;
+text-align: left;
+-webkit-border-radius:3px 3px 5px 3px;-moz-border-radius:3px 3px 5px;border-radius:3px 3px 5px 3px;
+}
+
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.ddsmoothmenu ul li ul li ul{
+top: 0;
+}
+
+/* Sub level menu links style */
+.ddsmoothmenu ul li ul li a{
+font: normal 12px Century Gothic, Futura;
+width: 180px; /*width of sub menus*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+white-space: nowrap;
+text-align: left;
+-webkit-border-radius:3px 3px 5px 3px;-moz-border-radius:3px 3px 5px;border-radius:3px 3px 5px 3px;
+}
+
+.ddsmoothmenu ul li ul li a.wide{
+font: normal 12px Century Gothic, Futura;
+min-width: 250px; /*width of sub menus*/
+/*max-width: 500px;*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+white-space: nowrap;
+text-align: left;
+}
+
+.ddsmoothmenu ul li ul li.itemlvl2 a.wideitm{
+font: normal 12px Century Gothic, Futura;
+min-width: 250px; /*width of sub menus*/
+/*max-width: 500px;*/
+padding: 5px;
+margin: 0;
+border-top-width: 0;
+border-bottom: 1px solid gray;
+white-space: nowrap;
+background-color: #888888 !important;
+text-align: left;
+}
+
+.ddsmoothmenu ul li ul li a.wide:hover {
+background: black !important; /*background of menu items during onmouseover (hover state)*/
+color: white;
+}
+
+.ddsmoothmenu ul li ul li.itemlvl2 a:hover {
+background: black !important; /*background of menu items during onmouseover (hover state)*/
+color: white;
+}
+
+.ddsmoothmenu ul li a .dc-icon {
+    /*background: url("../../Content/Images/arrowsm.png") no-repeat scroll 0 0 transparent;*/
+    background: url("../../Content/Images/arrow_menu.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 6px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 8px;
+    margin: -3px -4px 0 0;   
+}
+
+.ddsmoothmenu ul li a .dc-icon-sm {
+    /*background: url("../../Content/Images/arrowsm.png") no-repeat scroll 0 0 transparent;*/
+    background: url("../../Content/Images/arrowsm.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 6px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 8px;
+    margin: -1px -2px 0 0;   
+}
+
+/* Holly Hack for IE \*/
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+
+/* ######### CSS classes applied to down and right arrow images  ######### */
+
+.downarrowclass{
+position: absolute;
+top: 12px;
+right: 5px;
+}
+
+.rightarrowclass{
+position: absolute;
+top: 6px;
+right: 5px;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+
+/*.ddshadow{ /*shadow for NON CSS3 capable browsers
+position: absolute;
+left: 0;
+top: 0;
+width: 0;
+height: 0;
+background: silver;
+}
+*/
+/*.toplevelshadow{ /*shadow opacity for NON CSS3 capable browsers. Doesn't work in IE
+opacity: 0.8;
+}*/
+
+/*JCLOUD STYLES*/
+div.jqcloud {
+  /*font-family: "Helvetica", "Arial", sans-serif;*/
+  color: #b1b4bd;
+  overflow: hidden;
+  position: relative;
+}
+div.jqcloud a {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+div.jqcloud a:hover {
+  color: #b1b4bd;
+}
+div.jqcloud a:hover {
+  color: #b1b4bd;
+}
+div.jqcloud span {
+  padding: 0;
+}
+div.jqcloud span.w10 {
+  font-size: 40px;
+  color: #0b1b4bdcf;
+}
+div.jqcloud span.w9 {
+  font-size: 36px;
+  color: #b1b4bd;
+}
+div.jqcloud span.w8 {
+  font-size: 30px;
+  color: #b1b4bd;
+}
+div.jqcloud span.w7 {
+  font-size: 28px;
+  color: #b1b4ee;
+}
+div.jqcloud span.w6 {
+  font-size: 26px;
+  color: #b1e4bd;
+}
+div.jqcloud span.w5 {
+  font-size: 22px;
+  color: #b1babd;
+}
+div.jqcloud span.w4 {
+  font-size: 20px;
+  color: #beb4bd;
+}
+div.jqcloud span.w3 {
+  font-size: 16px;
+  color: #bed4bd;
+}
+div.jqcloud span.w2 {
+  font-size: 14px;
+  color: #bedfed;
+}
+div.jqcloud span.w1 {
+  font-size: 10px;
+  color: #a4b4bd;
+}
+ #wordcloud span.w10, #wordcloud span.w9, #wordcloud span.w8, #wordcloud span.w7 {
+text-shadow: 0px 1px 1px #ccc;
+}
+#wordcloud span.w3, #wordcloud span.w2, #wordcloud span.w1 {
+text-shadow: 0px 1px 1px #fff;
+}
+#wordcloud {
+border: #8a949e solid 1px;
+-webkit-border-radius:6px 6px 8px 6px;-moz-border-radius:6px 6px 8px;border-radius:6px 6px 8px 6px;
+margin-bottom: 10px;
+}
+
+.ddsmoothmenu ul li a img {
+    margin-right: 4px;
+    margin-top: -2px;
+}

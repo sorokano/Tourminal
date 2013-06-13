@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="elcondor" Class="TourminalDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=milfoil.arvixe.com;Initial Catalog=elcondor;Persist Security Info=True;User ID=elcondoruser" SettingsObjectName="LinqToVariables.Properties.Settings" SettingsPropertyName="elcondorConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="elcondoruser.TblVariables" Member="TblVariables">
+    <Type Name="TblVariables">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Value" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>jQuery Map Marker</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="Scripts/mapmarker.jquery.js"></script>
+
+	
+	<script type="text/javascript">
+		// Use below link if you want to get latitude & longitude
+		// http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude.php
+		
+		$(document).ready(function(){
+			var myMarkers = {"markers": [
+					{"latitude": "10.48241", "longitude":"-66.891174", "icon": "Content/images/flag_red.png", "weblink": "asdf"},
+					{"latitude": "35.101934057246055", "longitude":"-96.6796875", "icon": "Content/images/house.png", "baloon_text": "This is <strong>Oklahoma</strong>", "weblink_text": "http://localhost:11675/Home/CityAbout?id=6"},
+					{"latitude": "38.61687046392973", "longitude":"-98.876953125", "icon": "Content/images/house.png", "baloon_text": "This is <strong>Kansas</strong>", "weblink_text": "http://localhost:11675/Home/CityAbout?id=6"}
+				]
+			};
+
+			$("#map").mapmarker({
+				zoom	: 5,
+				center	: 'Venezuela',
+				markers	: myMarkers,
+			});
+
+		});
+	</script>
+	
+	
+  </head>
+  <body>
+
+    <div id="map" style="width: 550px; height: 450px"></div>
+	
+  </body>
+
+</html>
+
+
+

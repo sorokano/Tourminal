@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Elcondor.ElcondorWCF" CodeBehind="ElcondorWCF.svc.cs" %>
